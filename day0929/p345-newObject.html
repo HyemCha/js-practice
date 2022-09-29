@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>book 객체 배열 만들기</h3>
+    <hr>
+    <script>
+        var bookArray = [];
+        for(i=0; i<5; i++){
+            var str = prompt("",)
+            str = str.split(",")
+            let book = new Object();
+            book.name = str[0]
+            book.writer = str[1]
+            book.price = str[2]
+            bookArray[i] = book
+        }
+        //출력
+        for(let a of bookArray){
+            document.write(a.name + ", ")
+            document.write(a.writer + ", ")
+            document.write(a.price)
+            document.write("<br>")
+        }
+        // 가격 비교
+        let big = Number(bookArray[0].price)
+        for(let i of bookArray){
+            document.write(typeof i.price)
+            if(big<i.price)
+                big = Number(i.price)   
+        }
+        document.write("<hr>")
+        document.write("가장 비싼 책은 " + big)
+    </script>
+</body>
+</html>
