@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>getElementsByClassName 
+        <button onclick="places()">where i wanna go</button>
+        <button onclick="needs()">what i need</button>
+    </h3>
+    <hr>
+    <div class="place">경주</div>
+    <div class="place">제주도</div>
+    <div class="place">서울</div>
+    <div class="need">잠</div>
+    <div class="need">돈</div>
+    <div class="need">체력</div>
+    <script>
+        function places(){
+            let placesArr = document.getElementsByClassName("place")
+            for(var i=0; i<placesArr.length; i++){
+                let p = placesArr[i]
+                p.style.color = "red"
+                p.style.fontSize = "50px"
+            }
+        }
+        function needs(){
+            let needsArr = document.getElementsByClassName("need")
+            for(var i=0; i<needsArr.length; i++){
+                let n = needsArr[i]
+                n.style.color = "blue"
+                n.style.fontSize = "25px"
+            }
+        }
+    </script>
+</body>
+</html>
