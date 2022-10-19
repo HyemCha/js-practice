@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="h3">별 문자열 출력</h3>
+    <script>
+        let n = prompt('정수 입력')
+        printStar(n)
+        function printStar(n){
+            let m = Number(n)
+            if(isNaN(m)||m<1){
+                document.write('입력 오류')
+                return;
+            }
+            for(let i=0; i<=m; i++){
+                for(let j=0;j<i; j++){
+                    document.write("*")
+                }
+                document.write("<br>")
+            }
+        }
+        let h = document.getElementById("h3")
+        h.onmouseover = function(){
+            this.textContent = 'dksjflkdj'
+        }
+        h.onmouseleave = function(){
+            this.textContent = '별 문자열 출력'
+        }
+    </script>
+</body>
+</html>

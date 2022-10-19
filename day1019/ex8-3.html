@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            visibility: hidden;
+            color: blue;
+        }
+    </style>
+    <script>
+        function show(){
+            let objArray = document.getElementsByTagName("span")
+            for (let i of objArray) {
+                let obj = i
+                let style = window.getComputedStyle(obj)
+                let v = style.getPropertyValue("visibility")
+                if(v == 'hidden'){
+                    obj.style.visibility='visible'
+                }else{
+                    obj.style.visibility = 'hidden'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>다음 빈 곳에 수무은 단어는?</h3>
+    <button onclick="show()">show/hide</button>
+    <hr>
+    <ul>
+        <li>i (<span>love</span>) you</li>
+        <li>i (<span>ㅗ</span>) you</li>
+        <li>i (<span>hate</span>) you</li>
+    </ul>
+</body>
+</html>
