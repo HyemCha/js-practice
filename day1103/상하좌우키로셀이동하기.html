@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            border: 1px orchid solid;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        let index = 0
+        let td = document.getElementsByTagName('td')
+        td[index].style.backgroundColor = "orchid"
+        function whatKeyDown(e){
+            if (index >= td.length){
+                index = 0
+            }else{
+                index++
+            }
+            let div = document.getElementById('div')
+            // div.innerHTML = e.key
+            if(e.key == 'ArrowLeft'){
+                td[index].style.backgroundColor = "orchid"
+            }
+        }
+    </script>
+</head>
+<body onkeydown="whatKeyDown(event)">
+    <h3>상하좌우 키로 셀 이동하기</h3>
+    <hr>
+    <table id="table">
+        <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+        <tr>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+        </tr>
+        <tr>
+            <td>g</td>
+            <td>h</td>
+            <td>i</td>
+        </tr>
+    </table>
+    <div id="div"></div>
+</body>
+</html>
