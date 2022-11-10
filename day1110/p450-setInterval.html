@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const imgList = ['../image/cat.jpg', '../image/chipmunk.jpg', '../image/chita.jpg', '../image/penguin.jpeg']
+    </script>
+    <style>
+        div#div{
+            width: 500px;
+            height: 340px;
+            overflow: hidden;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h3>텍스트가 자동 회전하며, 마우스로 클릭하면 중단</h3>
+    <hr>
+    <span id="span" style="background-color:yellow">자동 회전하는 텍스트입니다.</span>
+    <div id="div">
+        <!-- <img id="img" src='../image/cat.jpg' width="500" alt=""> -->
+    </div>
+    <script>
+        let span = document.getElementById("span")
+        let div = document.getElementById("div")
+        let timerID = setInterval("doRotate()", 200)
+        let img = [];
+        for (i=0; i<imgList.length; i++){
+            img[i] = document.createElement("img")
+            img.style.width = "500px"
+            img.src = imgList[i]
+            div.appendChild(img)
+        }
+
+        span.onclick = function(e){
+            clearInterval(timerID)
+        }
+
+        function doRotate(){
+            let str = span.innerHTML
+            let firstChar = str.substr(0,1)
+            let remains = str.substr(1, str.length-1)
+            str = remains + firstChar
+            span.innerHTML = str
+        }
+        function doImgRotate(){
+            
+        }
+    </script>
+</body>
+</html>

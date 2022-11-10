@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function load(){
+            let select = document.getElementById("site")
+            window.location = select.options[select.selectedIndex].value
+        }
+    </script>
+</head>
+<body>
+    <h3>window.location으로 웹 사이트 접속</h3>
+    <hr>
+    사이트 선택:
+    <select id="site" class="btn-info">
+        <option value="http://www.naver.com" selected>네이버</option>
+        <option value="http://www.google.com">구글</option>
+        <option value="http://www.micosoft.com">마이크로소프트</option>
+    </select>
+    <p></p>
+    <button class="btn btn-primary" onclick="load()">웹 사이트 접속</button>
+</body>
+</html>
