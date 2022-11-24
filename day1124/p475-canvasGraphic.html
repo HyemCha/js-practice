@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang:400" rel="stylesheet">
+</head>
+<body>
+    <h3>3개의 캔버스 만들기</h3>
+    <hr>
+    <canvas id="canvas1" width="300" height="300" style="background-color: lightblue"></canvas>
+    <canvas id="canvas2" width="150" height="100" style="background-color: rgb(124, 185, 155)"></canvas>
+    <canvas id="canvas3" width="300" height="150" style="background-color: rgb(241, 203, 245)"></canvas>
+    <script>
+        let canvas = document.getElementById("canvas1")
+        context = canvas.getContext("2d")
+
+        context.beginPath()
+        context.strokeStyle = "blue"
+        context.rect(30,30,50,50)
+        context.stroke()
+
+        context.beginPath()
+        context.filltyle = "violet"
+        context.rect(60,60,50,50)
+        context.fill()
+
+        context.font = "20px KirangHarang"
+        context.fillStyle = "green"
+        context.fillText("Text in Canvas아아아", 100, 50)
+
+        context.beginPath()
+        context.moveTo(20, 20)
+        context.lineTo(150, 50)
+        context.strokeStyle = "blue"
+        context.stroke()
+
+        context.beginPath()
+        context.arc(80, 220, 50, 0, 1.5*Math.PI, false)
+        context.lineWidth = 20
+        context.strokeStyle = "violet"
+        context.stroke()
+
+        context.beginPath()
+        context.moveTo(150, 100)
+        context.lineTo(50, 100)
+        context.lineTo(130, 150)
+        context.lineTo(100, 65)
+        context.lineTo(70, 150)
+        context.lineTo(150, 100)
+        context.lineWidth = 5
+        context.strokeStyle = "blue"
+        context.stroke()
+    </script>
+</body>
+</html>
